@@ -1,12 +1,9 @@
-// js/main.js - Módulo Principal
-
-// Importar todos los módulos
+// js/main.js - VERSIÓN CORREGIDA Y DEFINITIVA
 import { initializeThemeToggle } from './modules/themeManager.js';
 import { loadProjects } from './modules/projectLoader.js';
 import { initializeForm } from './modules/formHandler.js';
 import { setupScrollAnimations } from './modules/scrollAnimations.js';
 
-// Función de inicialización principal
 function initPortfolio() {
     console.log('🚀 Inicializando portafolio...');
     
@@ -15,13 +12,13 @@ function initPortfolio() {
     loadProjects();
     initializeForm();
     setupScrollAnimations();
-    
+
     // Configurar botón de ver proyectos
-    const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+    const viewProjectsBtn = document.getElementById("viewProjectsBtn");
     if (viewProjectsBtn) {
         viewProjectsBtn.addEventListener('click', () => {
-            document.getElementById('proyectos').scrollIntoView({ 
-                behavior: 'smooth' 
+            document.getElementById('proyectos').scrollIntoView({
+                behavior: 'smooth'
             });
         });
     }
@@ -29,7 +26,7 @@ function initPortfolio() {
     console.log('✅ Portafolio inicializado correctamente');
 }
 
-// Esperar a que el DOM esté completamente cargado
+// CORRECCIÓN - Esta parte debe estar FUERA de la función
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPortfolio);
 } else {

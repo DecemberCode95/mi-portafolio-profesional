@@ -3,126 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre - Portafolio Profesional</title>
-    <meta name="description" content="Portafolio profesional de desarrollo web con tecnologías modernas">
+    <title>Tu Nombre - Desarrollador Frontend</title>
+    <meta name="description" content="Portafolio profesional de desarrollo web especializado en JavaScript, React y tecnologías modernas">
     
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- Fuentes de Google (opcional) -->
+    <!-- Fuentes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header y Navegación -->
+    <!-- ===== HEADER Y NAVEGACIÓN ===== -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav__brand">TuNombre</div>
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="#inicio">TuNombre</a>
+            </div>
+            
             <ul class="nav__menu">
                 <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
-                <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
                 <li class="nav__item"><a href="#sobre-mi" class="nav__link">Sobre Mí</a></li>
+                <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+            
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                🌙
+            </button>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ===== HERO SECTION ===== -->
         <section id="inicio" class="hero">
-            <div class="hero__content">
-                <h1 class="hero__title">Hola, soy <span class="hero__name">Tu Nombre</span></h1>
-                <p class="hero__description">Desarrollador Frontend especializado en crear experiencias digitales excepcionales</p>
-                <div class="hero__buttons">
-                    <button class="btn btn--primary" id="viewProjectsBtn">Ver Proyectos</button>
-                    <a href="#contacto" class="btn btn--secondary">Contactar</a>
+            <div class="hero__content container">
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        Hola, soy <span class="hero__name">Tu Nombre</span>
+                    </h1>
+                    <p class="hero__description">
+                        Desarrollador Frontend especializado en crear experiencias digitales excepcionales
+                    </p>
+                    <div class="hero__buttons">
+                        <button class="btn btn--primary" id="viewProjectsBtn">
+                            Ver Proyectos
+                        </button>
+                        <a href="#contacto" class="btn btn--secondary">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero__visual">
+                    <div class="hero__image-placeholder">
+                        <!-- Aquí puedes agregar tu foto o ilustración -->
+                        <span>🎯</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Sobre Mí -->
+        <!-- ===== SOBRE MÍ ===== -->
         <section id="sobre-mi" class="about">
             <div class="container">
                 <h2 class="section__title">Sobre Mí</h2>
+                
                 <div class="about__content">
                     <div class="about__text">
-                        <p>Soy un desarrollador apasionado por crear soluciones web modernas y eficientes.</p>
-                        <p>Especializado en JavaScript, React y tecnologías frontend.</p>
+                        <p class="about__intro">
+                            Soy un desarrollador apasionado por crear soluciones web modernas y eficientes. 
+                            Me especializo en tecnologías frontend y me encanta transformar ideas en 
+                            experiencias digitales impactantes.
+                        </p>
+                        
+                        <div class="about__details">
+                            <div class="about__detail">
+                                <h3>🎯 Mi Enfoque</h3>
+                                <p>Desarrollo de interfaces intuitivas, código limpio y experiencias de usuario excepcionales.</p>
+                            </div>
+                            
+                            <div class="about__detail">
+                                <h3>🚀 Tecnologías</h3>
+                                <p>JavaScript ES6+, React, Vue.js, CSS3, HTML5 y herramientas modernas de desarrollo.</p>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="about__skills">
-                        <h3>Habilidades</h3>
-                        <div class="skills__list">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
+                        <h3 class="skills__title">Habilidades Técnicas</h3>
+                        <div class="skills__grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skills__list">
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Vue.js</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Herramientas</h4>
+                                <div class="skills__list">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">Webpack</span>
+                                    <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">VS Code</span>
+                                    <span class="skill-tag">Netlify</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Proyectos - Bento Grid -->
+        <!-- ===== PROYECTOS - BENTO GRID ===== -->
         <section id="proyectos" class="portfolio">
             <div class="container">
                 <h2 class="section__title">Mis Proyectos</h2>
+                <p class="section__subtitle">
+                    Una selección de mis trabajos más recientes y desafiantes
+                </p>
+                
                 <div class="portfolio-grid" id="portfolioGrid">
                     <!-- Los proyectos se cargan dinámicamente con JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Sección Contacto -->
+        <!-- ===== CONTACTO ===== -->
         <section id="contacto" class="contact">
             <div class="container">
                 <h2 class="section__title">Contacto</h2>
-                <p class="contact__description">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+                <p class="contact__description">
+                    ¿Tienes un proyecto en mente? ¡Hablemos! Estoy siempre abierto a nuevas oportunidades 
+                    y colaboraciones interesantes.
+                </p>
                 
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-                    <!-- Campo hidden para Formspree -->
-                    <input type="hidden" name="_subject" value="Nuevo mensaje desde portafolio">
-                    
-                    <div class="form-group">
-                        <label for="name" class="form-label">Nombre completo</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre completo" required>
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3>📧 Contáctame Directamente</h3>
+                        <div class="contact__methods">
+                            <div class="contact__method">
+                                <strong>Email:</strong>
+                                <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a>
+                            </div>
+                            <div class="contact__method">
+                                <strong>LinkedIn:</strong>
+                                <a href="#" target="_blank">linkedin.com/in/tunombre</a>
+                            </div>
+                            <div class="contact__method">
+                                <strong>GitHub:</strong>
+                                <a href="#" target="_blank">github.com/tunombre</a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="tu.email@ejemplo.com" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-                        <span class="btn__text">Enviar Mensaje</span>
-                        <div class="btn__loader" style="display: none;">Enviando...</div>
-                    </button>
-                </form>
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mmpgzpxj" method="POST">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde portafolio">
+                        <input type="hidden" name="_language" value="es">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nombre completo *</label>
+                                <input type="text" id="name" name="name" class="form-control" 
+                                       placeholder="Tu nombre completo" required>
+                                <div class="field-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" 
+                                       placeholder="tu.email@ejemplo.com" required>
+                                <div class="field-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label">Empresa (opcional)</label>
+                            <input type="text" id="company" name="company" class="form-control" 
+                                   placeholder="Nombre de tu empresa">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Tipo de proyecto</label>
+                            <select id="budget" name="budget" class="form-control">
+                                <option value="">Selecciona una opción</option>
+                                <option value="landing-page">Landing Page</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="web-app">Aplicación Web</option>
+                                <option value="consultoria">Consultoría</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje *</label>
+                            <textarea id="message" name="message" class="form-control" rows="6" 
+                                      placeholder="Cuéntame sobre tu proyecto, objetivos y timeline..." 
+                                      required></textarea>
+                            <div class="field-error"></div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                                <span class="btn__text">📨 Enviar Mensaje</span>
+                                <span class="btn__loader" style="display: none;">
+                                    <span class="spinner"></span> Enviando...
+                                </span>
+                            </button>
+                            <p class="form-note">
+                                * Campos obligatorios. Te responderé en menos de 24 horas.
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 <strong>Tu Nombre</strong>. Todos los derechos reservados.</p>
-            <div class="footer__links">
-                <a href="#" class="footer__link">LinkedIn</a>
-                <a href="#" class="footer__link">GitHub</a>
-                <a href="#" class="footer__link">Twitter</a>
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3>Tu Nombre</h3>
+                    <p>Desarrollador Frontend & Diseñador de Experiencias</p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#sobre-mi">Sobre Mí</a></li>
+                            <li><a href="#proyectos">Proyectos</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4>Conecta</h4>
+                        <ul>
+                            <li><a href="#" target="_blank">LinkedIn</a></li>
+                            <li><a href="#" target="_blank">GitHub</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4>Recursos</h4>
+                        <ul>
+                            <li><a href="assets/resume.pdf" download>Descargar CV</a></li>
+                            <li><a href="#proyectos">Ver Proyectos</a></li>
+                            <li><a href="mailto:tu.email@ejemplo.com">Contacto Directo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 <strong>Tu Nombre</strong>. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ y mucho ☕</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

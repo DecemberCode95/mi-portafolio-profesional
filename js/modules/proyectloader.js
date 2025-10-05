@@ -1,6 +1,7 @@
-// js/modules/projectLoader.js - Cargador de Proyectos Bento Grid
-
+// js/modules/projectLoader.js - VERSIÓN NUEVA Y CORREGIDA
 export function loadProjects() {
+    console.log('📁 Cargando proyectos...');
+    
     const projects = getProjectsData();
     const gridContainer = document.getElementById('portfolioGrid');
     
@@ -18,7 +19,7 @@ export function loadProjects() {
         gridContainer.appendChild(projectElement);
     });
     
-    console.log(`✅ ${projects.length} proyectos cargados`);
+    console.log(`✅ ${projects.length} proyectos cargados correctamente`);
 }
 
 function getProjectsData() {
@@ -26,44 +27,44 @@ function getProjectsData() {
         {
             id: 1,
             title: "E-commerce Moderno",
-            description: "Plataforma de comercio electrónico desarrollada con React y Node.js, featuring carrito de compras, pasarela de pago y panel de administración.",
-            image: "img/project1.jpg",
+            description: "Plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración. Desarrollada con React y Node.js.",
+            image: "img/proyectos/proyecto1-mockup.jpg",
             technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-            link: "#",
-            github: "#",
+            demoLink: "#",
+            githubLink: "#",
             category: "fullstack",
             featured: true
         },
         {
             id: 2,
             title: "App de Gestión de Tareas", 
-            description: "Aplicación web progresiva para gestión de tareas con funcionalidades offline, notificaciones y sincronización en la nube.",
-            image: "img/project2.jpg",
-            technologies: ["JavaScript", "CSS3", "HTML5", "PWA", "IndexedDB"],
-            link: "#",
-            github: "#",
+            description: "Aplicación web progresiva para gestión de tareas con funcionalidades colaborativas, notificaciones y sincronización en la nube.",
+            image: "img/proyectos/proyecto2-mockup.jpg",
+            technologies: ["Vue.js", "Firebase", "PWA", "CSS3", "JavaScript"],
+            demoLink: "#",
+            githubLink: "#",
             category: "frontend",
-            featured: false
+            featured: true
         },
         {
             id: 3,
             title: "Dashboard Analytics",
-            description: "Panel de control interactivo con gráficos en tiempo real, métricas de negocio y reporting avanzado para toma de decisiones.",
-            image: "img/project3.jpg",
-            technologies: ["Vue.js", "D3.js", "Firebase", "Chart.js", "Sass"],
-            link: "#",
-            github: "#",
+            description: "Panel de control interactivo con métricas en tiempo real, gráficos dinámicos y reportes automatizados para toma de decisiones.",
+            image: "img/proyectos/proyecto3-mockup.jpg",
+            technologies: ["React", "D3.js", "Chart.js", "Express", "PostgreSQL"],
+            demoLink: "#",
+            githubLink: "#",
             category: "dashboard",
-            featured: true
+            featured: false
         },
         {
             id: 4,
             title: "API REST Segura",
-            description: "API RESTful desarrollada con autenticación JWT, documentación Swagger y tests de integración completos.",
-            image: "img/project1.jpg", // Usar misma imagen temporal
+            description: "API RESTful desarrollada con autenticación JWT, documentación Swagger completa y suite de tests de integración.",
+            image: "img/proyectos/proyecto4-mockup.jpg",
             technologies: ["Python", "Django", "PostgreSQL", "JWT", "Docker"],
-            link: "#",
-            github: "#",
+            demoLink: "#",
+            githubLink: "#",
             category: "backend",
             featured: false
         }
@@ -75,7 +76,7 @@ function createProjectElement(project, index) {
     article.className = `portfolio-item ${project.featured ? 'portfolio-item--featured' : ''}`;
     article.setAttribute('data-category', project.category);
     
-    // Añadir delay para animación escalonada
+    // Delay para animación escalonada
     article.style.animationDelay = `${index * 0.1}s`;
     
     article.innerHTML = `
@@ -83,26 +84,31 @@ function createProjectElement(project, index) {
             <img src="${project.image}" 
                  alt="${project.title}" 
                  class="portfolio-item__img"
-                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzljYTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbiBkZSBwcm95ZWN0bzwvdGV4dD48L3N2Zz4='">
+                 loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzljYTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk1vY2t1cCBkZSBwcm95ZWN0bzwvdGV4dD48L3N2Zz4='">
             <div class="portfolio-item__overlay">
                 <div class="portfolio-item__actions">
-                    <a href="${project.link}" class="btn btn--primary btn--small" target="_blank">Ver Demo</a>
-                    <a href="${project.github}" class="btn btn--secondary btn--small" target="_blank">GitHub</a>
+                    <a href="${project.demoLink}" class="btn btn--primary btn--small" target="_blank" aria-label="Ver demo de ${project.title}">
+                        <span>🌐 Ver Demo</span>
+                    </a>
+                    <a href="${project.githubLink}" class="btn btn--secondary btn--small" target="_blank" aria-label="Ver código de ${project.title}">
+                        <span>💻 Código</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="portfolio-item__content">
             <h3 class="portfolio-item__title">${project.title}</h3>
-            <p class="portfolio-item__desc">${project.description}</p>
-            <div class="portfolio-item__tech">
+            <p class="portfolio-item__description">${project.description}</p>
+            <div class="portfolio-item__technologies">
                 ${project.technologies.map(tech => 
-                    `<span class="tech-tag">${tech}</span>`
+                    `<span class="tech-tag" data-tech="${tech.toLowerCase()}">${tech}</span>`
                 ).join('')}
             </div>
         </div>
     `;
     
-    // Añadir microinteracciones hover
+    // Agregar microinteracciones
     addProjectInteractions(article);
     
     return article;
@@ -111,26 +117,57 @@ function createProjectElement(project, index) {
 function addProjectInteractions(projectElement) {
     const imageContainer = projectElement.querySelector('.portfolio-item__image-container');
     const overlay = projectElement.querySelector('.portfolio-item__overlay');
+    const img = projectElement.querySelector('.portfolio-item__img');
     
-    // Efecto hover suave
+    // Efectos hover
     projectElement.addEventListener('mouseenter', () => {
         projectElement.style.transform = 'translateY(-8px)';
-        projectElement.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+        projectElement.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
         overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
     });
     
     projectElement.addEventListener('mouseleave', () => {
         projectElement.style.transform = 'translateY(0)';
-        projectElement.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)';
+        projectElement.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
         overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
     });
     
     // Efecto de carga de imagen
-    const img = projectElement.querySelector('img');
-    img.addEventListener('load', () => {
-        img.style.opacity = '1';
+    img.addEventListener('load', function() {
+        this.style.opacity = '1';
+        this.style.transform = 'scale(1)';
     });
     
+    // Estado inicial de la imagen
     img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease';
+    img.style.transform = 'scale(1.1)';
+    img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    
+    // Click en los tags de tecnología
+    const techTags = projectElement.querySelectorAll('.tech-tag');
+    techTags.forEach(tag => {
+        tag.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tech = tag.getAttribute('data-tech');
+            console.log(`🔍 Filtrar por tecnología: ${tech}`);
+            // Aquí puedes agregar filtrado por tecnología
+        });
+    });
+}
+
+// Función adicional para filtrar proyectos (opcional)
+export function filterProjects(category) {
+    const projects = document.querySelectorAll('.portfolio-item');
+    
+    projects.forEach(project => {
+        if (category === 'all' || project.getAttribute('data-category') === category) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
+    });
+    
+    console.log(`🎯 Proyectos filtrados por: ${category}`);
 }
