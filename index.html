@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre - Desarrollador Frontend</title>
+    <title> Daniel-Roa - Desarrollador Frontend</title>
     <meta name="description" content="Portafolio profesional de desarrollo web especializado en JavaScript, React y tecnologías modernas">
     
     <!-- Favicon -->
@@ -11,11 +10,40 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- lightGallery CSS -->
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lightgallery.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-thumbnail.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-zoom.css" />
+</head>
+<body>
+    <!-- Tu galería -->
+    <section id="proyectos" class="portfolio">
+        <div class="container">
+            <h2 class="section__title">Mis Proyectos</h2>
+            <div id="portfolio-gallery" class="portfolio-grid">
+                <!-- Las imágenes se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tus scripts -->
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- lightGallery JS -->
+    <script src="js/libs/lightgallery.js"></script>
+    <script src="js/libs/plugins/lg-thumbnail.js"></script>
+    <script src="js/libs/plugins/lg-zoom.js"></script>
     
     <!-- Fuentes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <!-- Lightgallery CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
+
+<!-- Lightgallery JS y plugins (antes de cerrar </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
     <!-- ===== HEADER Y NAVEGACIÓN ===== -->
     <header class="header">
         <nav class="nav container">

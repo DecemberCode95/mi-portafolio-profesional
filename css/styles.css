@@ -874,3 +874,43 @@ section {
     font-size: 3rem;
   }
 }
+
+/* Contenedor principal de la galería usando Flexbox */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espacio uniforme entre elementos */
+  justify-content: center; /* o 'flex-start' */
+}
+
+/* Clase para cada ítem de la galería */
+.gallery-item {
+  flex: 1 1 300px; /* Crece, encoge, con un ancho base de 300px */
+  max-width: 400px;
+}
+
+/* Estilos para la imagen dentro de cada ítem */
+.gallery-item img {
+  width: 100%; /* La imagen llena el ancho de su contenedor */
+  height: 250px; /* Altura fija opcional, o usar 'auto' */
+  object-fit: cover; /* Ajusta la imagen recortando si es necesario */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+
+  /* Controla el algoritmo de escalado para mayor nitidez */
+  image-rendering: -webkit-optimize-contrast; /* Soporte para Webkit como Safari */
+  image-rendering: crisp-edges; /* Preserva bordes y contraste (ideal para gráficos) */
+  image-rendering: pixelated; /* Efecto pixelado al escalar */
+}
+
+/* Reglas Responsive con Media Queries */
+@media only screen and (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 45%; /* En tablets, 2 imágenes por fila */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%; /* En móviles, 1 imagen por fila */
+  }
+}
