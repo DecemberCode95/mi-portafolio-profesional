@@ -2,19 +2,34 @@
 export function initializeThemeToggle() {
     console.log('🎨 Inicializando gestor de temas...');
     
-    const themeToggle = document.getElementById('themeToggle');
+    // Asegurar botón principal en header
+    const headerToggle = document.getElementById('themeToggle');
+
+    // Inyectar botón adicional en el hero si existe el contenedor
+    let heroToggle = document.getElementById('themeToggleHero');
+    const heroButtons = document.querySelector('.hero__buttons');
+    if (!heroToggle && heroButtons) {
+        heroToggle = document.createElement('button');
+        heroToggle.id = 'themeToggleHero';
+        heroToggle.className = 'btn btn--secondary';
+        heroToggle.type = 'button';
+        heroToggle.setAttribute('aria-label', 'Cambiar tema');
+        heroButtons.appendChild(heroToggle);
+    }
+
+    const toggles = [headerToggle, heroToggle].filter(Boolean);
     const currentTheme = getSavedTheme();
-    
-    // Aplicar tema guardado al cargar
+
+    // Aplicar tema inicial (oscuro por defecto si no hay preferencia)
     applyTheme(currentTheme);
-    updateToggleButton(themeToggle, currentTheme);
-    
-    // Configurar evento click
-    themeToggle.addEventListener('click', handleThemeToggle);
-    
-    // Configurar microinteracciones
-    setupThemeInteractions(themeToggle);
-    
+    toggles.forEach(btn => updateToggleButton(btn, currentTheme));
+
+    // Configurar eventos
+    toggles.forEach(btn => {
+        btn.addEventListener('click', handleThemeToggle);
+        setupThemeInteractions(btn);
+    });
+
     // Escuchar cambios de tema del sistema (opcional)
     listenToSystemTheme();
     
@@ -22,20 +37,21 @@ export function initializeThemeToggle() {
 }
 
 function getSavedTheme() {
-    // Intentar obtener tema guardado
+    // 1) Preferencia guardada
     const savedTheme = localStorage.getItem('portfolio-theme');
-    
-    if (savedTheme) {
-        return savedTheme;
-    }
-    
-    // Si no hay tema guardado, detectar preferencia del sistema
+    if (savedTheme) return savedTheme;
+
+    // 2) Si el HTML ya tiene data-theme, respetarlo
+    const attrTheme = document.documentElement.getAttribute('data-theme');
+    if (attrTheme) return attrTheme;
+
+    // 3) Preferencia del sistema
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark';
     }
-    
-    // Tema por defecto
-    return 'light';
+
+    // 4) Por defecto: oscuro para descanso visual
+    return 'dark';
 }
 
 function handleThemeToggle() {
@@ -69,20 +85,23 @@ function applyTheme(theme) {
 }
 
 function updateToggleButton(button, theme) {
+    if (!button) return;
     // Microinteracción: animación del botón
     button.style.transform = 'scale(1.1)';
-    
-    // Cambiar icono y texto según el tema
+
     const isDark = theme === 'dark';
-    button.innerHTML = isDark ? '☀️' : '🌙';
-    button.setAttribute('aria-label', 
-        isDark ? 'Activar modo claro' : 'Activar modo oscuro'
-    );
-    button.setAttribute('title', 
-        isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
-    );
-    
-    // Restaurar escala después de la animación
+
+    // Si es el botón del hero (estilo textual), muestra texto claro
+    if (button.id === 'themeToggleHero' || button.classList.contains('btn')) {
+        button.textContent = isDark ? 'Modo: Claro' : 'Modo: Oscuro';
+    } else {
+        // Botón compacto del header (emoji)
+        button.innerHTML = isDark ? '☀️' : '🌙';
+    }
+
+    button.setAttribute('aria-label', isDark ? 'Activar modo claro' : 'Activar modo oscuro');
+    button.setAttribute('title', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+
     setTimeout(() => {
         button.style.transform = 'scale(1)';
     }, 150);

@@ -1,8 +1,11 @@
+
 // js/main.js - VERSIÓN CORREGIDA Y DEFINITIVA
 import { initializeThemeToggle } from './modules/themeManager.js';
-import { loadProjects } from './modules/projectLoader.js';
+import { loadProjects } from './modules/proyectloader.js';
 import { initializeForm } from './modules/formHandler.js';
-import { setupScrollAnimations } from './modules/scrollAnimations.js';
+import { setupScrollAnimations, initTypewriterEffect } from './modules/scrollAnimations.js';
+import { GalleryManager } from './modules/galleyManager.js';
+
 
 function initPortfolio() {
     console.log('🚀 Inicializando portafolio...');
@@ -12,6 +15,7 @@ function initPortfolio() {
     loadProjects();
     initializeForm();
     setupScrollAnimations();
+    initTypewriterEffect();
 
     // Configurar botón de ver proyectos
     const viewProjectsBtn = document.getElementById("viewProjectsBtn");
@@ -23,6 +27,10 @@ function initPortfolio() {
         });
     }
     
+    // Inicializar la galería
+    const galleryManager = new GalleryManager();
+    galleryManager.init();
+
     console.log('✅ Portafolio inicializado correctamente');
 }
 

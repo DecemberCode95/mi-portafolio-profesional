@@ -876,7 +876,7 @@ section {
 }
 
 /* Contenedor principal de la galería usando Flexbox */
-.portfolio-grid {
+.gallery-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem; /* Espacio uniforme entre elementos */
@@ -912,5 +912,22 @@ section {
 @media only screen and (max-width: 480px) {
   .gallery-item {
     flex: 1 1 100%; /* En móviles, 1 imagen por fila */
+  }
+}
+
+/* Accesibilidad: enfoque visible */
+.btn:focus-visible,
+.nav__link:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Preferencias del usuario: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,310 +1,673 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Daniel-Roa - Desarrollador Frontend</title>
-    <meta name="description" content="Portafolio profesional de desarrollo web especializado en JavaScript, React y tecnologías modernas">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- lightGallery CSS -->
-    <link type="text/css" rel="stylesheet" href="css/lightgallery/lightgallery.css" />
-    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-thumbnail.css" />
-    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-zoom.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Roa - Desarrollador Frontend</title>
+  <meta name="description" content="Portafolio profesional de desarrollo web especializado en JavaScript, React y tecnologías modernas" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+
+  <!-- Fuentes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- lightGallery (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.css" />
 </head>
 <body>
-    <!-- Tu galería -->
-    <section id="proyectos" class="portfolio">
-        <div class="container">
-            <h2 class="section__title">Mis Proyectos</h2>
-            <div id="portfolio-gallery" class="portfolio-grid">
-                <!-- Las imágenes se cargarán dinámicamente aquí -->
-            </div>
+  <!-- ===== HEADER Y NAVEGACIÓN ===== -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="#inicio">CodeDanny</a>
+      </div>
+
+      <ul class="nav__menu">
+        <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+        <li class="nav__item"><a href="#sobre-mi" class="nav__link">Sobre Mí</a></li>
+        <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
+        <li class="nav__item"><a href="#frontend" class="nav__link">Frontend</a></li>
+        <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO SECTION ===== -->
+    <section id="inicio" class="hero">
+      <div class="hero__content container">
+        <div class="hero__text">
+          <h1 class="hero__title">Hola, soy <span class="hero__name">CodeDanny</span></h1>
+          <p class="hero__description">Desarrollador Frontend especializado en crear experiencias digitales excepcionales</p>
+          <div class="hero__buttons">
+            <button class="btn btn--primary" id="viewProjectsBtn">Ver Proyectos</button>
+            <a href="#contacto" class="btn btn--secondary">Contactar</a>
+          </div>
         </div>
+
+        <div class="hero__visual">
+          <div class="hero__image-placeholder">
+            <span>🎯</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Tus scripts -->
-    <script type="module" src="js/main.js"></script>
-    
-    <!-- lightGallery JS -->
-    <script src="js/libs/lightgallery.js"></script>
-    <script src="js/libs/plugins/lg-thumbnail.js"></script>
-    <script src="js/libs/plugins/lg-zoom.js"></script>
-    
-    <!-- Fuentes Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lightgallery CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="about">
+      <div class="container">
+        <h2 class="section__title">Sobre Mí</h2>
 
-<!-- Lightgallery JS y plugins (antes de cerrar </body>) -->
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+        <div class="about__content">
+          <div class="about__text">
+            <p class="about__intro">
+              Soy un desarrollador apasionado por crear soluciones web modernas y eficientes.
+              Me especializo en tecnologías frontend y me encanta transformar ideas en
+              experiencias digitales impactantes.
+            </p>
 
-    <!-- ===== HEADER Y NAVEGACIÓN ===== -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav__brand">
-                <a href="#inicio">TuNombre</a>
-            </div>
-            
-            <ul class="nav__menu">
-                <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
-                <li class="nav__item"><a href="#sobre-mi" class="nav__link">Sobre Mí</a></li>
-                <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
-                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
-            </ul>
-            
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-                🌙
-            </button>
-        </nav>
-    </header>
+            <div class="about__details">
+              <div class="about__detail">
+                <h3>🎯 Mi Enfoque</h3>
+                <p>Desarrollo de interfaces intuitivas, código limpio y experiencias de usuario excepcionales.</p>
+              </div>
 
-    <main>
-        <!-- ===== HERO SECTION ===== -->
-        <section id="inicio" class="hero">
-            <div class="hero__content container">
-                <div class="hero__text">
-                    <h1 class="hero__title">
-                        Hola, soy <span class="hero__name">Tu Nombre</span>
-                    </h1>
-                    <p class="hero__description">
-                        Desarrollador Frontend especializado en crear experiencias digitales excepcionales
-                    </p>
-                    <div class="hero__buttons">
-                        <button class="btn btn--primary" id="viewProjectsBtn">
-                            Ver Proyectos
-                        </button>
-                        <a href="#contacto" class="btn btn--secondary">
-                            Contactar
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero__visual">
-                    <div class="hero__image-placeholder">
-                        <!-- Aquí puedes agregar tu foto o ilustración -->
-                        <span>🎯</span>
-                    </div>
-                </div>
+              <div class="about__detail">
+                <h3>🚀 Tecnologías</h3>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- ===== SOBRE MÍ ===== -->
-        <section id="sobre-mi" class="about">
-            <div class="container">
-                <h2 class="section__title">Sobre Mí</h2>
-                
-                <div class="about__content">
-                    <div class="about__text">
-                        <p class="about__intro">
-                            Soy un desarrollador apasionado por crear soluciones web modernas y eficientes. 
-                            Me especializo en tecnologías frontend y me encanta transformar ideas en 
-                            experiencias digitales impactantes.
-                        </p>
-                        
-                        <div class="about__details">
-                            <div class="about__detail">
-                                <h3>🎯 Mi Enfoque</h3>
-                                <p>Desarrollo de interfaces intuitivas, código limpio y experiencias de usuario excepcionales.</p>
-                            </div>
-                            
-                            <div class="about__detail">
-                                <h3>🚀 Tecnologías</h3>
-                                <p>JavaScript ES6+, React, Vue.js, CSS3, HTML5 y herramientas modernas de desarrollo.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about__skills">
-                        <h3 class="skills__title">Habilidades Técnicas</h3>
-                        <div class="skills__grid">
-                            <div class="skill-category">
-                                <h4>Frontend</h4>
-                                <div class="skills__list">
-                                    <span class="skill-tag">HTML5</span>
-                                    <span class="skill-tag">CSS3</span>
-                                    <span class="skill-tag">JavaScript</span>
-                                    <span class="skill-tag">React</span>
-                                    <span class="skill-tag">Vue.js</span>
-                                    <span class="skill-tag">TypeScript</span>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <h4>Herramientas</h4>
-                                <div class="skills__list">
-                                    <span class="skill-tag">Git</span>
-                                    <span class="skill-tag">Webpack</span>
-                                    <span class="skill-tag">Figma</span>
-                                    <span class="skill-tag">VS Code</span>
-                                    <span class="skill-tag">Netlify</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="about__skills">
+            <h3 class="skills__title">Habilidades Técnicas</h3>
+            <div class="skills__grid">
+              <div class="skill-category">
+                <h4>Frontend</h4>
+                <div class="skills__list">
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Vue.js</span>
+                  <span class="skill-tag">TypeScript</span>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- ===== PROYECTOS - BENTO GRID ===== -->
-        <section id="proyectos" class="portfolio">
-            <div class="container">
-                <h2 class="section__title">Mis Proyectos</h2>
-                <p class="section__subtitle">
-                    Una selección de mis trabajos más recientes y desafiantes
-                </p>
-                
-                <div class="portfolio-grid" id="portfolioGrid">
-                    <!-- Los proyectos se cargan dinámicamente con JavaScript -->
+              <div class="skill-category">
+                <h4>Herramientas</h4>
+                <div class="skills__list">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">Webpack</span>
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">VS Code</span>
+                  <span class="skill-tag">Netlify</span>
                 </div>
+              </div>
             </div>
-        </section>
-
-        <!-- ===== CONTACTO ===== -->
-        <section id="contacto" class="contact">
-            <div class="container">
-                <h2 class="section__title">Contacto</h2>
-                <p class="contact__description">
-                    ¿Tienes un proyecto en mente? ¡Hablemos! Estoy siempre abierto a nuevas oportunidades 
-                    y colaboraciones interesantes.
-                </p>
-                
-                <div class="contact__content">
-                    <div class="contact__info">
-                        <h3>📧 Contáctame Directamente</h3>
-                        <div class="contact__methods">
-                            <div class="contact__method">
-                                <strong>Email:</strong>
-                                <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a>
-                            </div>
-                            <div class="contact__method">
-                                <strong>LinkedIn:</strong>
-                                <a href="#" target="_blank">linkedin.com/in/tunombre</a>
-                            </div>
-                            <div class="contact__method">
-                                <strong>GitHub:</strong>
-                                <a href="#" target="_blank">github.com/tunombre</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mmpgzpxj" method="POST">
-                        <input type="hidden" name="_subject" value="Nuevo mensaje desde portafolio">
-                        <input type="hidden" name="_language" value="es">
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Nombre completo *</label>
-                                <input type="text" id="name" name="name" class="form-control" 
-                                       placeholder="Tu nombre completo" required>
-                                <div class="field-error"></div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" name="email" class="form-control" 
-                                       placeholder="tu.email@ejemplo.com" required>
-                                <div class="field-error"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company" class="form-label">Empresa (opcional)</label>
-                            <input type="text" id="company" name="company" class="form-control" 
-                                   placeholder="Nombre de tu empresa">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget" class="form-label">Tipo de proyecto</label>
-                            <select id="budget" name="budget" class="form-control">
-                                <option value="">Selecciona una opción</option>
-                                <option value="landing-page">Landing Page</option>
-                                <option value="ecommerce">E-commerce</option>
-                                <option value="web-app">Aplicación Web</option>
-                                <option value="consultoria">Consultoría</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensaje *</label>
-                            <textarea id="message" name="message" class="form-control" rows="6" 
-                                      placeholder="Cuéntame sobre tu proyecto, objetivos y timeline..." 
-                                      required></textarea>
-                            <div class="field-error"></div>
-                        </div>
-                        
-                        <div class="form-footer">
-                            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-                                <span class="btn__text">📨 Enviar Mensaje</span>
-                                <span class="btn__loader" style="display: none;">
-                                    <span class="spinner"></span> Enviando...
-                                </span>
-                            </button>
-                            <p class="form-note">
-                                * Campos obligatorios. Te responderé en menos de 24 horas.
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__brand">
-                    <h3>Tu Nombre</h3>
-                    <p>Desarrollador Frontend & Diseñador de Experiencias</p>
-                </div>
-                
-                <div class="footer__links">
-                    <div class="footer__section">
-                        <h4>Navegación</h4>
-                        <ul>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#sobre-mi">Sobre Mí</a></li>
-                            <li><a href="#proyectos">Proyectos</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer__section">
-                        <h4>Conecta</h4>
-                        <ul>
-                            <li><a href="#" target="_blank">LinkedIn</a></li>
-                            <li><a href="#" target="_blank">GitHub</a></li>
-                            <li><a href="#" target="_blank">Twitter</a></li>
-                            <li><a href="#" target="_blank">Instagram</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer__section">
-                        <h4>Recursos</h4>
-                        <ul>
-                            <li><a href="assets/resume.pdf" download>Descargar CV</a></li>
-                            <li><a href="#proyectos">Ver Proyectos</a></li>
-                            <li><a href="mailto:tu.email@ejemplo.com">Contacto Directo</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p>&copy; 2024 <strong>Tu Nombre</strong>. Todos los derechos reservados.</p>
-                <p>Hecho con ❤️ y mucho ☕</p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script type="module" src="js/main.js"></script>
+    <!-- ===== PROYECTOS - GALERÍA LIGHTGALLERY ===== -->
+    <section id="proyectos-bento" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Mis Proyectos</h2>
+        <div id="portfolio-gallery" class="gallery-grid">
+          <!-- La galería se carga dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS - GRID (Cards) ===== -->
+    <section id="proyectos" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Mis Proyectos</h2>
+        <p class="section__subtitle">Una selección de mis trabajos más recientes y desafiantes</p>
+
+        <!-- Panel de KPIs y gráficos para evitar espacio en blanco -->
+        <section aria-label="Estadísticas y logros" style="margin-top:1rem;display:grid;gap:1.25rem;">
+          <!-- KPIs -->
+          <div class="kpi-strip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+            <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1rem;box-shadow:var(--shadow);">
+              <div style="color:var(--text-light);font-size:.85rem;">Proyectos</div>
+              <div style="font-size:1.75rem;font-weight:700;color:var(--primary-color);">30+</div>
+              <div style="color:var(--text-light);font-size:.85rem;">Producción y personales</div>
+            </div>
+            <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1rem;box-shadow:var(--shadow);">
+              <div style="color:var(--text-light);font-size:.85rem;">LCP</div>
+              <div style="font-size:1.75rem;font-weight:700;color:var(--primary-color);">1.8s</div>
+              <div style="color:var(--text-light);font-size:.85rem;">3G, mobile-first</div>
+            </div>
+            <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1rem;box-shadow:var(--shadow);">
+              <div style="color:var(--text-light);font-size:.85rem;">Accesibilidad</div>
+              <div style="font-size:1.75rem;font-weight:700;color:var(--primary-color);">AA</div>
+              <div style="color:var(--text-light);font-size:.85rem;">WCAG</div>
+            </div>
+            <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1rem;box-shadow:var(--shadow);">
+              <div style="color:var(--text-light);font-size:.85rem;">Satisfacción</div>
+              <div style="font-size:1.75rem;font-weight:700;color:var(--primary-color);">95%</div>
+              <div style="color:var(--text-light);font-size:.85rem;">Feedback clientes</div>
+            </div>
+          </div>
+
+          <!-- Gráficos inline (SVG) -->
+          <div class="charts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+            <!-- Radial score -->
+            <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;box-shadow:var(--shadow);padding:1rem;display:grid;gap:.5rem;justify-items:center;">
+              <svg viewBox="0 0 120 120" width="140" height="140" role="img" aria-label="Lighthouse score 95">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--bg-secondary)" stroke-width="12" />
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--primary-color)" stroke-width="12" stroke-linecap="round"
+                        stroke-dasharray="339.292" stroke-dashoffset="17" transform="rotate(-90 60 60)" />
+                <text x="60" y="66" text-anchor="middle" fill="currentColor" font-size="26" font-weight="700">95</text>
+              </svg>
+              <figcaption style="color:var(--text-light);">Lighthouse Frontend</figcaption>
+            </figure>
+
+            <!-- Barras tecnologías -->
+            <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;box-shadow:var(--shadow);padding:1rem;">
+              <figcaption style="color:var(--text-light);margin-bottom:.5rem;">Stack y dominio</figcaption>
+              <svg viewBox="0 0 320 160" width="100%" height="160" role="img" aria-label="Dominio en tecnologías">
+                <rect x="0" y="0" width="320" height="160" fill="transparent" />
+                <g fill="var(--primary-color)">
+                  <rect x="20" y="30" width="220" height="18" rx="4" />
+                  <rect x="20" y="70" width="260" height="18" rx="4" />
+                  <rect x="20" y="110" width="240" height="18" rx="4" />
+                </g>
+                <g fill="currentColor" font-size="12">
+                  <text x="20" y="26">JavaScript</text>
+                  <text x="20" y="66">React</text>
+                  <text x="20" y="106">CSS/Accesibilidad</text>
+                </g>
+              </svg>
+            </figure>
+
+            <!-- Línea performance -->
+            <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;box-shadow:var(--shadow);padding:1rem;">
+              <figcaption style="color:var(--text-light);margin-bottom:.5rem;">Mejora de rendimiento (LCP)</figcaption>
+              <svg viewBox="0 0 320 160" width="100%" height="160" role="img" aria-label="Evolución LCP">
+                <polyline fill="none" stroke="var(--primary-color)" stroke-width="3" points="10,120 60,110 110,90 160,70 210,55 260,48 310,45" />
+                <g fill="currentColor" font-size="12">
+                  <text x="10" y="140">Inicio</text>
+                  <text x="250" y="140">Optimizado</text>
+                </g>
+              </svg>
+            </figure>
+          </div>
+
+          <!-- Buenas prácticas y actitudes -->
+          <div class="achievements-grid" style="display:flex;flex-wrap:wrap;gap:.5rem;">
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">Entrega puntual</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">Código limpio</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">A/B Testing</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">SEO/SEM</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">PWA</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">Accesibilidad AA</span>
+            <span style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:999px;padding:.4rem .75rem;color:var(--text-color);font-size:.9rem;">DX/Testing</span>
+          </div>
+        </section>
+
+        <noscript>
+          <div class="portfolio-grid" style="margin-top:1rem;">
+            <article class="portfolio-item" style="opacity:1;transform:none;">
+              <div class="portfolio-item__image-container">
+                <img class="portfolio-item__img" src="https://picsum.photos/seed/featured1/640/420" alt="E-commerce Moderno" loading="lazy" decoding="async" />
+              </div>
+              <div class="portfolio-item__content">
+                <h3 class="portfolio-item__title">E-commerce Moderno</h3>
+                <p class="portfolio-item__description">Carrito, pagos y panel admin. Accesible, rápido y modular.</p>
+              </div>
+            </article>
+            <article class="portfolio-item" style="opacity:1;transform:none;">
+              <div class="portfolio-item__image-container">
+                <img class="portfolio-item__img" src="https://picsum.photos/seed/featured2/640/420" alt="PWA de Tareas" loading="lazy" decoding="async" />
+              </div>
+              <div class="portfolio-item__content">
+                <h3 class="portfolio-item__title">PWA de Tareas</h3>
+                <p class="portfolio-item__description">Offline-first, sync en tiempo real y notificaciones.</p>
+              </div>
+            </article>
+            <article class="portfolio-item" style="opacity:1;transform:none;">
+              <div class="portfolio-item__image-container">
+                <img class="portfolio-item__img" src="https://picsum.photos/seed/featured3/640/420" alt="Dashboard Analytics" loading="lazy" decoding="async" />
+              </div>
+              <div class="portfolio-item__content">
+                <h3 class="portfolio-item__title">Dashboard Analytics</h3>
+                <p class="portfolio-item__description">Métricas en tiempo real y reportes automatizados.</p>
+              </div>
+            </article>
+          </div>
+        </noscript>
+        <div class="portfolio-grid" id="portfolioGrid"><!-- Cards dinámicas --></div>
+      </div>
+    </section>
+
+    <!-- ===== CASOS DE ÉXITO ===== -->
+    <section id="casos" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Casos de Éxito</h2>
+        <p class="section__subtitle">Desarrollo de programación — mira mis trabajos con metas y logros</p>
+        <div class="case-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;">
+          <!-- Case 1 -->
+          <article class="case-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="case-card__media" style="position:relative;height:360px;">
+              <img src="https://picsum.photos/seed/ecommerce-case/1280/800" alt="E-commerce Moderno" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+              <div class="case-card__overlay" style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.25rem;background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);color:#fff;">
+                <h3 style="margin:0;font-size:1.25rem;">E-commerce Moderno</h3>
+                <p style="margin:.25rem 0 0;font-size:.95rem;opacity:.95;">Carrito, pagos y panel admin. Accesible, rápido y modular.</p>
+              </div>
+            </div>
+            <div class="case-card__content" style="padding:1rem 1.25rem;display:grid;gap:.75rem;">
+              <div class="case-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;">
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">+18%</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Conversión</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">1.8s</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">LCP 3G</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">AA</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Accesibilidad</div>
+                </div>
+              </div>
+              <div class="case-actions" style="display:flex;gap:.5rem;flex-wrap:wrap;">
+                <a class="btn btn--primary btn--small" href="#" target="_blank" rel="noopener">Ver Demo</a>
+                <a class="btn btn--secondary btn--small" href="https://github.com/DecemberCode95" target="_blank" rel="noopener">Ver Código</a>
+              </div>
+            </div>
+          </article>
+          <!-- Case 2 -->
+          <article class="case-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="case-card__media" style="position:relative;height:360px;">
+              <img src="https://picsum.photos/seed/pwa-case/1280/800" alt="PWA de Tareas" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+              <div class="case-card__overlay" style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.25rem;background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);color:#fff;">
+                <h3 style="margin:0;font-size:1.25rem;">PWA de Tareas</h3>
+                <p style="margin:.25rem 0 0;font-size:.95rem;opacity:.95;">Offline-first, sync en tiempo real y notificaciones.</p>
+              </div>
+            </div>
+            <div class="case-card__content" style="padding:1rem 1.25rem;display:grid;gap:.75rem;">
+              <div class="case-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;">
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">+22%</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Retención</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;"><2s</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Carga</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">Push</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Notificaciones</div>
+                </div>
+              </div>
+              <div class="case-actions" style="display:flex;gap:.5rem;flex-wrap:wrap;">
+                <a class="btn btn--primary btn--small" href="#" target="_blank" rel="noopener">Ver Demo</a>
+                <a class="btn btn--secondary btn--small" href="https://github.com/DecemberCode95" target="_blank" rel="noopener">Ver Código</a>
+              </div>
+            </div>
+          </article>
+          <!-- Case 3 -->
+          <article class="case-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="case-card__media" style="position:relative;height:360px;">
+              <img src="https://picsum.photos/seed/analytics-case/1280/800" alt="Dashboard Analytics" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+              <div class="case-card__overlay" style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.25rem;background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);color:#fff;">
+                <h3 style="margin:0;font-size:1.25rem;">Dashboard Analytics</h3>
+                <p style="margin:.25rem 0 0;font-size:.95rem;opacity:.95;">Métricas en tiempo real y reportes automatizados.</p>
+              </div>
+            </div>
+            <div class="case-card__content" style="padding:1rem 1.25rem;display:grid;gap:.75rem;">
+              <div class="case-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;">
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">-40%</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Tiempo análisis</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">Live</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Real-time</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:10px;padding:.75rem;text-align:center;">
+                  <div style="font-weight:700;color:var(--primary-color);font-size:1.1rem;">PDF</div>
+                  <div style="color:var(--text-light);font-size:.85rem;">Export</div>
+                </div>
+              </div>
+              <div class="case-actions" style="display:flex;gap:.5rem;flex-wrap:wrap;">
+                <a class="btn btn--primary btn--small" href="#" target="_blank" rel="noopener">Ver Demo</a>
+                <a class="btn btn--secondary btn--small" href="https://github.com/DecemberCode95" target="_blank" rel="noopener">Ver Código</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MÉTRICAS Y LOGROS ===== -->
+    <section id="logros" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Trayectoria y Logros</h2>
+        <p class="section__subtitle">Resultados medibles y enfoque profesional orientado a impacto</p>
+        <div class="metrics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1rem;">
+          <div class="metric-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:var(--shadow);">
+            <h3 style="font-size:2rem;color:var(--primary-color);">5+</h3>
+            <p style="color:var(--text-light);">Años de experiencia</p>
+          </div>
+          <div class="metric-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:var(--shadow);">
+            <h3 style="font-size:2rem;color:var(--primary-color);">30+</h3>
+            <p style="color:var(--text-light);">Proyectos entregados</p>
+          </div>
+          <div class="metric-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:var(--shadow);">
+            <h3 style="font-size:2rem;color:var(--primary-color);">JS/TS, React</h3>
+            <p style="color:var(--text-light);">Stack principal</p>
+          </div>
+          <div class="metric-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:var(--shadow);">
+            <h3 style="font-size:2rem;color:var(--primary-color);">95+</h3>
+            <p style="color:var(--text-light);">Lighthouse Frontend</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS Y ESTRATEGIA ===== -->
+    <section id="servicios" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Servicios & Estrategia</h2>
+        <p class="section__subtitle">Cómo convierto ideas en productos con valor</p>
+        <div class="services-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
+          <article class="service-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="service-card__media" style="height:180px;overflow:hidden;">
+              <img src="https://picsum.photos/seed/frontend-performance/800/480" alt="Frontend de Alto Rendimiento" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            </div>
+            <div style="padding:1.5rem;">
+              <h3>Frontend de Alto Rendimiento</h3>
+              <ul style="margin-top:0.75rem;color:var(--text-light);display:grid;gap:.5rem;">
+                <li>Arquitectura modular y escalable</li>
+                <li>Optimización CWV (LCP/CLS/TBT)</li>
+                <li>SSR/SSG cuando aplica</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="service-card__media" style="height:180px;overflow:hidden;">
+              <img src="https://picsum.photos/seed/ui-ux-accessibility/800/480" alt="UI/UX & Accesibilidad" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            </div>
+            <div style="padding:1.5rem;">
+              <h3>UI/UX & Accesibilidad</h3>
+              <ul style="margin-top:0.75rem;color:var(--text-light);display:grid;gap:.5rem;">
+                <li>Design Systems y microinteracciones</li>
+                <li>Dark/Light mode y prefers-reduced-motion</li>
+                <li>Accesibilidad AA</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="service-card__media" style="height:180px;overflow:hidden;">
+              <img src="https://picsum.photos/seed/architecture-performance/800/480" alt="Arquitectura & Performance" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            </div>
+            <div style="padding:1.5rem;">
+              <h3>Arquitectura & Performance</h3>
+              <ul style="margin-top:0.75rem;color:var(--text-light);display:grid;gap:.5rem;">
+                <li>Code splitting y lazy loading</li>
+                <li>Estrategia de cachés y CDN</li>
+                <li>Automatización CI/CD</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service-card" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div class="service-card__media" style="height:180px;overflow:hidden;">
+              <img src="https://picsum.photos/seed/technical-marketing/800/480" alt="Marketing Técnico" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            </div>
+            <div style="padding:1.5rem;">
+              <h3>Marketing Técnico</h3>
+              <ul style="margin-top:0.75rem;color:var(--text-light);display:grid;gap:.5rem;">
+                <li>Mensajes orientados a valor</li>
+                <li>Casos de éxito y métricas</li>
+                <li>Contenido SEO y social</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="tech-ai-grid" style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+          <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/genai/800/480" alt="IA Generativa" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <figcaption style="padding:.75rem 1rem;color:var(--text-light);">IA Generativa • Mejoras de productividad en contenido UI</figcaption>
+          </figure>
+          <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/cv/800/480" alt="Computer Vision" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <figcaption style="padding:.75rem 1rem;color:var(--text-light);">Computer Vision • Media optimization & detección</figcaption>
+          </figure>
+          <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/nlp/800/480" alt="NLP" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <figcaption style="padding:.75rem 1rem;color:var(--text-light);">NLP • Buscadores semánticos y asistentes</figcaption>
+          </figure>
+          <figure style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/devops/800/480" alt="DevOps & CI" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <figcaption style="padding:.75rem 1rem;color:var(--text-light);">DevOps/CI • Releases rápidos y seguros</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FRONTEND EXPERTISE ===== -->
+    <section id="frontend" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Frontend: HTML, CSS y JavaScript</h2>
+        <p class="section__subtitle">Buenas prácticas, arquitectura y ejecución con foco en resultados</p>
+        <div class="frontend-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+          <article style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/html5/800/480" alt="HTML5 Semántico" style="width:100%;height:180px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <div style="padding:1rem 1.25rem;">
+              <h3>HTML5 Semántico</h3>
+              <ul style="margin-top:.5rem;color:var(--text-light);display:grid;gap:.35rem;">
+                <li>Estructura accesible (landmarks, ARIA mínima)</li>
+                <li>SEO técnico y Open Graph</li>
+                <li>Fallbacks y noscript funcional</li>
+              </ul>
+            </div>
+          </article>
+          <article style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/css3/800/480" alt="CSS3 & Diseño" style="width:100%;height:180px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <div style="padding:1rem 1.25rem;">
+              <h3>CSS3: Diseño Escalable</h3>
+              <ul style="margin-top:.5rem;color:var(--text-light);display:grid;gap:.35rem;">
+                <li>Variables / temas claro-oscuro</li>
+                <li>Layouts responsive (Grid/Flex)</li>
+                <li>Microinteracciones y motion seguro</li>
+              </ul>
+            </div>
+          </article>
+          <article style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <img src="https://picsum.photos/seed/javascript/800/480" alt="JavaScript Moderno" style="width:100%;height:180px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <div style="padding:1rem 1.25rem;">
+              <h3>JavaScript Moderno</h3>
+              <ul style="margin-top:.5rem;color:var(--text-light);display:grid;gap:.35rem;">
+                <li>Arquitectura modular (ESM)</li>
+                <li>Optimización y lazy loading</li>
+                <li>Testing (unit/e2e) y DX</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="cta" style="margin-top:1.25rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a class="btn btn--primary" href="#proyectos">Ver trabajos</a>
+          <a class="btn btn--secondary" href="https://github.com/DecemberCode95" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOJA DE RUTA PROFESIONAL ===== -->
+    <section id="ruta" class="portfolio">
+      <div class="container">
+        <h2 class="section__title">Hoja de Ruta Profesional</h2>
+        <div class="timeline" style="position:relative;margin-top:1rem;">
+          <div class="timeline__item" style="display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-color);">
+            <div class="timeline__year" style="color:var(--primary-color);font-weight:600;">2024</div>
+            <div class="timeline__content">
+              <h3>Optimización Web & Arquitectura UI</h3>
+              <p class="timeline__desc" style="color:var(--text-light);">Mejora de Core Web Vitals, accesibilidad y DX para proyectos de alto tráfico.</p>
+            </div>
+          </div>
+          <div class="timeline__item" style="display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-color);">
+            <div class="timeline__year" style="color:var(--primary-color);font-weight:600;">2023</div>
+            <div class="timeline__content">
+              <h3>Dashboards y PWAs</h3>
+              <p class="timeline__desc" style="color:var(--text-light);">Construcción de experiencias offline-first y analíticas en tiempo real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cta" style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a class="btn btn--primary" href="mailto:gobierno.california95@outlook.com">📬 Agenda una reunión</a>
+          <a class="btn btn--secondary" href="https://github.com/DecemberCode95" target="_blank" rel="noopener">💻 Ver GitHub</a>
+          <a class="btn btn--secondary" href="https://www.linkedin.com/in/daniel-roa-8115031a8/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="contact">
+      <div class="container">
+        <h2 class="section__title">Contacto</h2>
+        <p class="contact__description">
+          ¿Tienes un proyecto en mente? ¡Hablemos! Estoy siempre abierto a nuevas oportunidades y colaboraciones interesantes.
+        </p>
+
+        <div class="contact__content">
+          <div class="contact__info">
+            <h3>📧 Contáctame Directamente</h3>
+            <div class="contact__methods">
+              <div class="contact__method">
+                <strong>Email:</strong>
+                <a href="mailto:gobierno.california95@outlook.com">gobierno.california95@outlook.com</a>
+              </div>
+              <div class="contact__method">
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/daniel-roa-8115031a8/" target="_blank" rel="noopener">linkedin.com/in/daniel-roa-8115031a8</a>
+              </div>
+              <div class="contact__method">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/DecemberCode95" target="_blank" rel="noopener">github.com/DecemberCode95</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde portafolio" />
+            <input type="hidden" name="_language" value="es" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Nombre *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre" required />
+                <div class="field-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="tu.email@ejemplo.com" required />
+                <div class="field-error"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company" class="form-label">Empresa (opcional)</label>
+              <input type="text" id="company" name="company" class="form-control" placeholder="Nombre de tu empresa" />
+            </div>
+
+            <div class="form-group">
+              <label for="budget" class="form-label">Tipo de proyecto</label>
+              <select id="budget" name="budget" class="form-control">
+                <option value="">Selecciona una opción</option>
+                <option value="landing-page">Landing Page</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="web-app">Aplicación Web</option>
+                <option value="consultoria">Consultoría</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Mensaje *</label>
+              <textarea id="message" name="message" class="form-control" rows="6" placeholder="Cuéntame sobre tu proyecto, objetivos y timeline..." required></textarea>
+              <div class="field-error"></div>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                <span class="btn__text">📨 Enviar Mensaje</span>
+                <span class="btn__loader" style="display: none;">
+                  <span class="spinner"></span> Enviando...
+                </span>
+              </button>
+              <p class="form-note">* Campos obligatorios. Te responderé en menos de 24 horas.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>CodeDanny</h3>
+          <p>Desarrollador Frontend & Diseñador de Experiencias</p>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__section">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#sobre-mi">Sobre Mí</a></li>
+              <li><a href="#proyectos">Proyectos</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h4>Conecta</h4>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/daniel-roa-8115031a8/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://github.com/DecemberCode95" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h4>Recursos</h4>
+            <ul>
+              <li><a href="assets/resumen.pdf" download>Descargar CV</a></li>
+              <li><a href="#proyectos">Ver Proyectos</a></li>
+              <li><a href="mailto:gobierno.california95@outlook.com">Contacto Directo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 <strong>CodeDanny</strong>. Todos los derechos reservados.</p>
+        <p>Hecho con ❤️ y mucho ☕</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor scripts (lightGallery) antes de tu código, para que el módulo de galería los encuentre disponibles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
+  <!-- JS principal -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

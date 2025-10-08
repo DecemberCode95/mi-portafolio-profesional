@@ -1,0 +1,108 @@
+/* ===== ESTILOS PARA LIGHTGALLERY ===== */
+
+/* Contenedor de la galería */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Items de la galería */
+.gallery-item {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.gallery-item__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item__overlay {
+    opacity: 1;
+}
+
+.gallery-item__zoom {
+    font-size: 2rem;
+    color: white;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item__zoom {
+    transform: scale(1);
+}
+
+/* Personalización de lightGallery */
+.lg-backdrop {
+    background: rgba(0, 0, 0, 0.93);
+}
+
+.lg-toolbar {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.lg-actions .lg-next, 
+.lg-actions .lg-prev {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lg-actions .lg-next:hover, 
+.lg-actions .lg-prev:hover {
+    background-color: var(--primary-color);
+}
+
+/* Miniaturas */
+.lg-thumb {
+    background: var(--bg-secondary);
+}
+
+.lg-thumb-item {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lg-thumb-item.active, 
+.lg-thumb-item:hover {
+    border-color: var(--primary-color);
+}
+
+/* Zoom */
+.lg-zoomable {
+    cursor: zoom-in;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lg-actions .lg-next, 
+    .lg-actions .lg-prev {
+        width: 40px;
+        height: 40px;
+    }
+}
